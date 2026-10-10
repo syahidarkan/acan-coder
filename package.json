@@ -1,0 +1,171 @@
+{
+  "name": "my-ai-coder",
+  "displayName": "Acan Coder",
+  "description": "AI coding assistant with smart token management and multi-provider rotation",
+  "version": "0.1.0",
+  "publisher": "acan",
+  "icon": "resources/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished",
+    "onCommand:my-ai-coder.openChat",
+    "onCommand:my-ai-coder.setApiKey"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "my-ai-coder.openChat",
+        "title": "Acan Coder: Open Chat",
+        "icon": "$(sparkle)"
+      },
+      {
+        "command": "my-ai-coder.setApiKey",
+        "title": "Acan Coder: Set API Key"
+      },
+      {
+        "command": "my-ai-coder.addDesignRule",
+        "title": "AI Coder: Add Design Rule"
+      },
+      {
+        "command": "my-ai-coder.clickToClone",
+        "title": "AI Coder: Click to Clone UI"
+      },
+      {
+        "command": "my-ai-coder.fetchAssets",
+        "title": "AI Coder: Fetch Assets"
+      },
+      {
+        "command": "my-ai-coder.runScraper",
+        "title": "AI Coder: Run Scraper"
+      },
+      {
+        "command": "my-ai-coder.dryRunScraper",
+        "title": "AI Coder: Dry Run Scraper"
+      },
+      {
+        "command": "my-ai-coder.viewTrainingLog",
+        "title": "AI Coder: View Training Log"
+      },
+      {
+        "command": "my-ai-coder.generateEda",
+        "title": "AI Coder: Generate EDA"
+      },
+      {
+        "command": "my-ai-coder.createPresentation",
+        "title": "AI Coder: Create Presentation"
+      },
+      {
+        "command": "my-ai-coder.createVideo",
+        "title": "AI Coder: Create Video"
+      },
+      {
+        "command": "my-ai-coder.useTemplate",
+        "title": "AI Coder: Use Prompt Template"
+      },
+      {
+        "command": "my-ai-coder.saveCurrentAsTemplate",
+        "title": "AI Coder: Save as Template"
+      },
+      {
+        "command": "my-ai-coder.manageTemplates",
+        "title": "AI Coder: Manage Templates"
+      },
+      {
+        "command": "my-ai-coder.setProjectContext",
+        "title": "AI Coder: Set Project Context"
+      },
+      {
+        "command": "my-ai-coder.hermesStatus",
+        "title": "AI Coder: Hermes Status"
+      },
+      {
+        "command": "my-ai-coder.profileVram",
+        "title": "AI Coder: Profile VRAM Usage"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "my-ai-coder.openChat",
+          "group": "navigation",
+          "when": "true"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "myAiCoder",
+          "title": "AI Coder",
+          "icon": "resources/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "myAiCoder": [
+        {
+          "id": "myAiCoder.chat",
+          "name": "Chat",
+          "type": "webview"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.config.js",
+    "watch": "node esbuild.config.js --watch",
+    "package": "vsce package",
+    "compile": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@mozilla/readability": "^0.5.0",
+    "@types/jsdom": "^30.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/uuid": "^10.0.0",
+    "axios": "^1.6.7",
+    "better-sqlite3": "^13.0.3",
+    "cheerio": "^1.0.0-rc.12",
+    "csv-parse": "^5.5.5",
+    "eventemitter3": "^5.0.1",
+    "express": "^4.18.3",
+    "jsdom": "^30.1.2",
+    "playwright": "^1.42.1",
+    "pptxgenjs": "^3.12.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "telegraf": "^4.16.3",
+    "ts-morph": "^21.0.1",
+    "turndown": "^7.1.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^9.6.0",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.5",
+    "@types/turndown": "^5.0.4",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.24.0",
+    "esbuild": "^0.20.1",
+    "typescript": "^5.3.3"
+  },
+  "bundledDependencies": [
+    "better-sqlite3",
+    "playwright",
+    "jsdom"
+  ],
+  "bundleDependencies": [
+    "better-sqlite3",
+    "playwright",
+    "jsdom"
+  ],
+  "allowScripts": {
+    "esbuild@0.20.2": true
+  }
+}

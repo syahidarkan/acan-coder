@@ -1,0 +1,21 @@
+{
+  "name": "hermes-server",
+  "version": "1.0.0",
+  "description": "Telegram relay server for My AI Coder (runs on PC)",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node -r dotenv/config index.ts",
+    "build": "tsc",
+    "start": "node -r dotenv/config dist/index.js"
+  },
+  "dependencies": {
+    "telegraf": "^4.16.3",
+    "axios": "^1.6.7",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.5",
+    "ts-node": "^10.9.2"
+  }
+}
